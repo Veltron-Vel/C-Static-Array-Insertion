@@ -3,32 +3,24 @@
 
 int main()
 {
-    int i,index,value;
-    int arr[10] = {1,2,3,4,5,6,7,8,9};
+    int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+    int length = 10;
+    int i,index;
 
-    int length = 9;
-
-    printf("The current array is :\n");
-    for(i=0;i<length;i++){
+    printf("The elements in the array currently are:\n");
+    for(i=0;i<10;i++){
         printf("%d\n",arr[i]);
     }
-
-    printf("In which index do you want add an element (0-9):\n"); // Please do not create a buffer-overflow by using 10 or higher
+    printf("Which position do you want to delete:\n"); // Don't create a buffer overflow by using more than 9
     scanf("%d",&index);
-    printf("What is the value of the element:\n");
-    scanf("%d",&value);
-
-    for(i=length-1;i>=index;i--){
-        arr[i+1] = arr[i];
+    for(i=index;i<length-1;i++){
+        arr[i] = arr[i+1];
     }
-    arr[index] = value;
-    length++;
-
-    printf("After insertion the array stands:\n");
+    length--;
+    printf("The array after deletion is:\n");
     for(i=0;i<length;i++){
         printf("%d\n",arr[i]);
     }
-    printf("The length of the array is %d\n",length);
 
     return 0;
 }
