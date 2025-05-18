@@ -8,7 +8,12 @@ int main()
 
     int length = 9;
 
-    printf("In which index do you want add an element(0-9):\n");
+    printf("The current array is :\n");
+    for(i=0;i<length;i++){
+        printf("%d\n",arr[i]);
+    }
+
+    printf("In which index do you want add an element (0-9):\n"); // Please do not create a buffer-overflow by using 10 or higher
     scanf("%d",&index);
     printf("What is the value of the element:\n");
     scanf("%d",&value);
